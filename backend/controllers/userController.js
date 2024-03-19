@@ -9,7 +9,7 @@ controller.createUser = (request, response) =>{
 };
 
 controller.readAll = (request, response) => {
-    console.log('Listar usuarios...');
+    console.log('Home Page');
 
     const pathPage = path.join(__dirname,'../..', 'frontend', 'public', 'index.html');
     response.sendFile(pathPage);

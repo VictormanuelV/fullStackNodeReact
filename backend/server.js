@@ -4,12 +4,11 @@ const app = express();
 //Configuraciones generales.
 const port = process.env.PORT || 3000;
 
-//Importar las rutas.
+//Erutamiento.
 const userRoutes = require('./routes/userRoutes');
-
-//Solicitud de rutas.
 app.use('/', userRoutes);
 app.use('/agregarUsuario', userRoutes);
+
 
 //Iniciar servidor.
 app.listen(port, () => {
