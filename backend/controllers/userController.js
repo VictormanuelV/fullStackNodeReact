@@ -4,15 +4,12 @@ const path = require('path');
 const controller = {};
 
 controller.createUser = (request, response) =>{
-    const user = request.body;
-    console.log('Agregar Usuario...');
+    console.log('Formulario Nuevo Usuario');
 };
 
 controller.readAll = (request, response) => {
     console.log('Home Page');
-
-    const pathPage = path.join(__dirname,'../..', 'frontend', 'public', 'index.html');
-    response.sendFile(pathPage);
+    response.json({"usuarios": ['usuario 1', 'usuario 2', 'usuario 3']});
 };
 
 module.exports = controller;
