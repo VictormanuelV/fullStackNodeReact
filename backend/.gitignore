@@ -1,5 +1,5 @@
 # Dependencias instaladas
-node_modules/
+/node_modules
 
 # Directorio de construcción
 /build
