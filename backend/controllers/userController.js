@@ -1,5 +1,5 @@
 const userModel = require('../models/userModel');
-const path = require('path');
+//const path = require('path');
 
 const controller = {};
 
@@ -9,7 +9,14 @@ controller.createUser = (request, response) =>{
 
 controller.readAll = (request, response) => {
     console.log('Home Page');
-    response.json({"usuarios": ['usuario 1', 'usuario 2', 'usuario 3']});
+
+    userModel.readAll((error, users) => {
+        if(error){
+            console.log('Error al recuperar usuarios (por el Controller)', error);
+            return response.status(500).json({error: 'Error interno al listar usuarios.'});
+        }
+        response.json({usuarios: users});
+    })
 };
 
 module.exports = controller;
